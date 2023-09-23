@@ -8,16 +8,6 @@ import { FilterField } from '../FilterField/FilterField';
 import { Title, SubTitle } from './App.styled';
 
 export const App = () => {
-  // state = {
-  //   contacts: [
-  //     { id: 'id-1', name: 'Rosie Simpson', tel: '459-12-56' },
-  //     { id: 'id-2', name: 'Hermione Kline', tel: '443-89-12' },
-  //     { id: 'id-3', name: 'Eden Clements', tel: '645-17-79' },
-  //     { id: 'id-4', name: 'Annie Copeland', tel: '227-91-26' },
-  //   ],
-  //   filter: '',
-  // };
-
   const [contacts, setContacts] = useState(() => {
     const savedContacts = localStorage.getItem('contacts');
     if (savedContacts !== null) {
@@ -67,19 +57,6 @@ export const App = () => {
   const visibleContact = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
-
-  // const visibleContact = () => {
-  //   const filterToLowCase = filter.toLowerCase();
-  //   return contacts.filter(contact =>
-  //     contact.name.toLowerCase().includes(filterToLowCase)
-  //   );
-  // };
-
-  // const visibleContact = useMemo(() => {
-  //   return contacts.filter(contact =>
-  //     contact.name.toLowerCase().includes(filter.toLowerCase())
-  //   );
-  // }, [contacts, filter]);
 
   return (
     <div>
