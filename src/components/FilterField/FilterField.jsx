@@ -1,10 +1,16 @@
 import { Text, InputFilter } from './FilterField.styled';
 
-export const FilterField = ({ value, onChangeFilter }) => {
+export const FilterField = ({ filter, setFilter }) => {
   return (
     <>
       <Text>Find contacts by name</Text>
-      <InputFilter type="text" value={value} onChange={onChangeFilter} />
+      <InputFilter
+        type="text"
+        value={filter}
+        onChange={evt => {
+          setFilter(evt.target.value);
+        }}
+      />
     </>
   );
 };

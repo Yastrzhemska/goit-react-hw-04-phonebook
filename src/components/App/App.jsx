@@ -42,11 +42,11 @@ export const App = () => {
     ]);
   };
 
-  const changeFilter = evt => {
-    setFilter({
-      filter: evt.target.value,
-    });
-  };
+  // const changeFilter = evt => {
+  //   setFilter({
+  //     filter: evt.target.value,
+  //   });
+  // };
 
   const deleteContact = contactId => {
     setContacts(prevState =>
@@ -63,7 +63,7 @@ export const App = () => {
       <Title>Phonebook</Title>
       <PhoneForm onAdd={addContact} />
       <SubTitle>Contacts</SubTitle>
-      <FilterField filter={filter} onChangeFilter={changeFilter} />
+      <FilterField filter={filter} setFilter={setFilter} />
       <ContactList contacts={visibleContact} onDelete={deleteContact} />
     </div>
   );
